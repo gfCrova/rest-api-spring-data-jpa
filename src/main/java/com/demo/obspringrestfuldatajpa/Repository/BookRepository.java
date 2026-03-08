@@ -10,8 +10,6 @@ import java.util.List;
  */
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-
     // -> findByOnline: Busca libros por su estado online
-    public List<Book> findByOnline(boolean online);
-
+    List<Book> findByOnline(boolean online);
 }
