@@ -2,6 +2,8 @@ package com.demo.obspringrestfuldatajpa.Controller;
 
 import com.demo.obspringrestfuldatajpa.Entities.Book;
 import com.demo.obspringrestfuldatajpa.Repository.BookRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,7 @@ public class BookController {
      * <a href="http://localhost:8080/api/books">http://localhost:8080/api/books</a>
      * @return List of all Books
      */
+    @Operation(summary = "List alls books", description = "It retrieves a list of all books registered in the database.")
     @GetMapping("api/books")
     public List<Book> findAlls() {
        log.info("200 OK - Getting all books");
@@ -38,12 +41,14 @@ public class BookController {
      * @param id
      * @return Book by Id
      */
+    @Operation(summary = "Get a book by your ID", description = "Returns a book based on the provided ID")
     @GetMapping("api/books/{id}")
     // ResponseEntity - Sirve para devolver un objeto y un estado HTTP
     public ResponseEntity<Book> findById(@PathVariable Long id) {  // -> @PathVariable: Indica que el parámetro id es un valor de la URL
         log.info("200 OK - Getting book by id: {}", id);
         Optional<Book> book = bookRepository.findById(id);
-        return book.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return book.map(ResponseEntity::ok)
+                    .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     /**
@@ -51,6 +56,7 @@ public class BookController {
      * @return Book created
      */
     // Metodo POST para CREAR un libro y guardarlo en la base de datos
+    @Operation(summary = "Create book", description = "Create a new book and save it to the database")
     @PostMapping("api/books")
     public ResponseEntity<Book> create(@RequestBody Book book) {  // -> @RequestBody: Indica que el parámetro book es un valor de la URL
         if (book.getId() != null){
@@ -63,6 +69,7 @@ public class BookController {
     }
 
     // Metodo PUT para ACTUALIZAR/MODIFICAR un libro en base de datos
+    @Operation(summary = "Update book", description = "Update the data of an existing book")
     @PutMapping("api/books")
     public ResponseEntity<Book> update(@RequestBody Book book){
         // Si el id es null, no se puede actualizar
@@ -85,6 +92,7 @@ public class BookController {
      * @return Book deleted
      */
     // Metodo DELETE para borrar un libro de la base de datos
+    @Operation(summary = "Delete a book by your ID", description = "Delete a book of the database")
     @DeleteMapping("api/books/{id}")
     public ResponseEntity<Book> delete(@PathVariable Long id){
         if (!bookRepository.existsById(id)){
@@ -97,6 +105,7 @@ public class BookController {
     }
 
     // Metodo DELETE para borrar todos los libros
+    @Operation(summary = "Delete alls books", description = "Delete alls book of the database")
     @DeleteMapping("api/books")
     public ResponseEntity<Void> deleteAll(){
         if (bookRepository.findAll().isEmpty()){

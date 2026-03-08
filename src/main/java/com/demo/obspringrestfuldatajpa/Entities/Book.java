@@ -1,21 +1,37 @@
 package com.demo.obspringrestfuldatajpa.Entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.models.annotations.OpenAPI30;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "books")
+@Schema(description = "Book Entity")
 public class Book {
 
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique identifier of the book", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
+
+    @Schema(description = "Title of the book", example = "Clean Code")
     private String title;
+
+    @Schema(description = "Author of the book", example = "Robert C. Martin")
     private String author;
+
+    @Schema(description = "Number of pages", example = "460")
     private Integer pages;
+
+    @Schema(description = "Book price", example = "240.50")
     private Double price;
+
+    @Schema(description = "Book release date", example = "2008-07-19")
     private LocalDate releaseDate;
+
+    @Schema(description = "It is available online", example = "true")
     private Boolean online;
 
     public Book() {}
