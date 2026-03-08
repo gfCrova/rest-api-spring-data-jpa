@@ -1,9 +1,11 @@
-## Spring Boot RESTful API con Data JPA
+## Api REST Spring Boot Data JPA
 
 Proyecto Spring Boot con las dependencias / starteds:
 
+### Starteds para web:
 * Spring Boot DevTools
 * Spring Web
+### Starteds para persistencia de datos
 * Spring Data JPA
 * H2 Database
 
