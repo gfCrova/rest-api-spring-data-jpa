@@ -25,5 +25,4 @@ public class ObSpringResTfulDataJpaApplication {
 
         System.out.println(bookRepository.findByOnline(true));
     }
-
 }
