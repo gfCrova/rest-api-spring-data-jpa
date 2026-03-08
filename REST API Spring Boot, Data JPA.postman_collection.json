@@ -1,0 +1,159 @@
+{
+  "info": {
+    "_postman_id": "e4cb2044-0676-4ab4-9825-4b3b90ad5c1d",
+    "name": "REST API Spring Boot, Data JPA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52784954",
+    "_collection_link": "https://go.postman.co/collection/52784954-e4cb2044-0676-4ab4-9825-4b3b90ad5c1d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/api/books GET ALLS",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/books",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/books/{id} GET ONE",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/books/2",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/books    CREATE",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"La ciudad de las luces muertas\",\r\n    \"author\": \"David Uclés\",\r\n    \"pages\": 280,\r\n    \"price\": 269.0,\r\n    \"releaseDate\": \"2026-03-01\",\r\n    \"online\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/books",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/books/{id}  UPDATE",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Titanic 2\",\r\n    \"author\": \"Stephen King\",\r\n    \"pages\": 440,\r\n    \"price\": 355.5,\r\n    \"releaseDate\": \"1987-11-14\",\r\n    \"online\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/books",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/books DELETE ALLS",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Titanic 2\",\r\n    \"author\": \"Stephen King\",\r\n    \"pages\": 440,\r\n    \"price\": 355.5,\r\n    \"releaseDate\": \"1987-11-14\",\r\n    \"online\": false\r\n}"
+        },
+        "url": {
+          "raw": "{{url}}/api/books",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/books/{id} DELETE ONE",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Titanic 2\",\r\n    \"author\": \"Stephen King\",\r\n    \"pages\": 440,\r\n    \"price\": 355.5,\r\n    \"releaseDate\": \"1987-11-14\",\r\n    \"online\": false\r\n}"
+        },
+        "url": {
+          "raw": "{{url}}/api/books/1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "books",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
