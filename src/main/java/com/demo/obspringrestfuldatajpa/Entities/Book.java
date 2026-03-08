@@ -1,7 +1,6 @@
 package com.demo.obspringrestfuldatajpa.Entities;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.models.annotations.OpenAPI30;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
