@@ -4,7 +4,6 @@ import com.demo.obspringrestfuldatajpa.Entities.Book;
 import com.demo.obspringrestfuldatajpa.Repository.BookRepository;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
-import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +21,7 @@ import java.time.LocalDate;
 public class ObSpringResTfulDataJpaApplication {
 
     public static void main(String[] args) {
+
         ApplicationContext context = SpringApplication.run(ObSpringResTfulDataJpaApplication.class, args);
         BookRepository bookRepository = context.getBean(BookRepository.class);
 
