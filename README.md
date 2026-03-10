@@ -9,6 +9,8 @@ Proyecto Spring Boot con las dependencias / starteds:
 * Spring Data JPA
 * H2 Database
 
+* Validation (Implementar)
+
 ### Aplicación API REST con acceso a base de datos H2 para persistir la información
 
 El acceso se puede realizar desde el navegador o desde Postman.
