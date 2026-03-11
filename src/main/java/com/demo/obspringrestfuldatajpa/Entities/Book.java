@@ -6,7 +6,12 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "books")
+@Table(name = "books",
+        indexes = {
+                @Index(name = "idx_author", columnList = "author"),
+                @Index(name = "idx_title", columnList = "title")
+        }
+)
 @Schema(description = "Book Entity")
 public class Book {
 
